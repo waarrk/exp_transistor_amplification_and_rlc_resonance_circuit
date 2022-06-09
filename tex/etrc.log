@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.141592653-p4.0.0-220214-2.6 (utf8.euc) (TeX Live 2022) (preloaded format=platex 2022.4.30)  9 JUN 2022 14:10
+This is e-pTeX, Version 3.141592653-p4.0.0-220214-2.6 (utf8.euc) (TeX Live 2022) (preloaded format=platex 2022.4.30)  9 JUN 2022 15:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -270,11 +270,7 @@ File: l3backend-dvipdfmx.def 2022-04-20 L3 backend support: dvipdfmx
 \g__pdf_backend_object_int=\count293
 \g__pdf_backend_annotation_int=\count294
 \g__pdf_backend_link_int=\count295
-) (./etrc.aux
-
-LaTeX Warning: Label `ataka' multiply defined.
-
-)
+) (./etrc.aux)
 \openout1 = `etrc.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 69.
@@ -380,25 +376,21 @@ LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
 
 AED: lastpage setting LastPage
 LaTeX Font Info:    Font shape `JT1/mc/m/sl' in size <10> not available
-(Font)              Font shape `JT1/mc/m/n' tried instead on input line 95.
+(Font)              Font shape `JT1/mc/m/n' tried instead on input line 91.
 LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
-(Font)              scaled to size 9.60999pt on input line 95.
+(Font)              scaled to size 9.60999pt on input line 91.
 LaTeX Font Info:    Font shape `JY1/mc/m/sl' in size <10> not available
-(Font)              Font shape `JY1/mc/m/n' tried instead on input line 95.
+(Font)              Font shape `JY1/mc/m/n' tried instead on input line 91.
 LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 9.60999pt on input line 95.
-[1] (./etrc.aux)
-
-LaTeX Warning: There were multiply-defined labels.
-
- ) 
+(Font)              scaled to size 9.60999pt on input line 91.
+[1] (./etrc.aux) ) 
 Here is how much of TeX's memory you used:
  5758 strings out of 478692
  91203 string characters out of 5855915
- 591297 words of memory out of 5000000
+ 591307 words of memory out of 5000000
  24150 multiletter control sequences out of 15000+600000
  483411 words of font info for 93 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
  70i,13n,76p,307b,351s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on etrc.dvi (2 pages, 4152 bytes).
+Output written on etrc.dvi (2 pages, 3452 bytes).
