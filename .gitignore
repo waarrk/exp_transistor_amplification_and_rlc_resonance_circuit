@@ -1,0 +1,4 @@
+*.exe
+*.tds
+*.out
+.DS_Store

@@ -1,0 +1,95 @@
+\RequirePackage{plautopatch}  % pLaTeX または upLaTeX のとき
+%\documentclass[uplatex,dvipdfmx,titlepage,a4j]{jsarticle}% upLaTeX のとき
+\documentclass[dvipdfmx,titlepage,a4j]{jsarticle}  % pLaTeX のとき
+\usepackage{listings,jvlisting}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage[yen]{okuverb}
+\usepackage{r04ec-exp}
+\usepackage{here}
+\usepackage{ascmac}
+\usepackage{fancybox}
+\usepackage{fancyvrb}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+\fancypagestyle{foot}
+{
+\fancyhead[C]{信号処理プログラミング}
+\fancyfoot[C]{\thepage / \pageref{LastPage}}
+\renewcommand\headrulewidth{0.4pt}
+}
+
+%ここからソースコードの表示に関する設定
+\lstset{
+  language={C++},
+  basicstyle={\ttfamily},
+  identifierstyle={\small},
+  commentstyle={\smallitshape},
+  keywordstyle={\small\bfseries},
+  ndkeywordstyle={\small},
+  stringstyle={\small\ttfamily},
+  frame={tb},
+  tabsize={2},
+  breaklines=true,
+  columns=[l]{fullflexible},
+  numbers=left,
+  xrightmargin=0zw,
+  xleftmargin=3zw,
+  numberstyle={\scriptsize},
+  stepnumber=1,
+  numbersep=1zw,
+  lineskip=-0.5ex
+}
+
+\renewcommand{\lstlistingname}{リスト}
+%ここまでソースコードの表示に関する設定
+
+\title{信号処理プログラミング}
+% 学年・番号
+\grade{4年42番}%
+% 氏名
+\author{鷲尾 優作}
+% 班（後期は班に分かれて実験をする．そのときは，ここに班番号を記入する．）
+\team{}
+% 提出日
+\date{2022年5月20日}
+% 実験日
+\expdate{2022年4月14日，4月21日，4月28日，5月19日}
+% 共同実験者
+% グループに分かれて実験をするテーマでは，グループメンバーの番号名前を書く．
+\coauthor{}
+%
+%記載例：
+%\coauthor{%
+%  2番 & 新潟　花子\\
+%  11番 & 三条　次郎}
+%%
+
+\begin{document}
+\pagestyle{foot}
+
+\maketitle
+
+\section{はじめに}
+電子制御工学科4年前期（4年42番）の信号処理プログラミング実験の中間結果について報告する.
+アナログな信号をデジタル処理するにあたり必要な基礎的な信号生成，解析手法の実装，
+応用としてWindows標準の音声ファイルである「wav」のヘッダ解析，プログラムによる作成を行なった．
+レポートは実験テキストを完全に転記しているわけではないため，実験の再現には実験テキストが必要である．
+
+\section{環境}
+\subsection{コンパイラ}
+実験に使用したプログラムは以下の環境にてコンパイルをおこなった．
+最終的にはこのレポート上のプログラムは両環境で動作できることを確認した．
+
+\begin{enumerate}
+  \item Windows11(64bit) + Embarcadero C++ 7.30 for Win32 Copyright (c) 2012-2017 Embarcadero Technologies, Inc.
+  \item MacOS Monterey(64bit) v12.3.1 + GCC Apple clang version 13.1.6 (clang-1316.0.21.2.3)
+\end{enumerate}
+
+\begin{thebibliography}{99}
+  \bibitem{ataka} 高橋 章、実験テキスト「信号処理プログラミング」、（2022年）,
+  \bibitem{ataka} 高橋 章、Wikipedia「標本化定理」、{https://ja.wikipedia.org/wiki/標本化定理} 、（2021年12月15日 (水) 12:16）
+\end{thebibliography}
+
+\end{document}
