@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.141592653-p4.0.0-220214-2.6 (utf8.euc) (TeX Live 2022) (preloaded format=platex 2022.4.30)  13 JUN 2022 00:56
+This is e-pTeX, Version 3.141592653-p4.0.0-220214-2.6 (utf8.euc) (TeX Live 2022) (preloaded format=platex 2022.4.30)  13 JUN 2022 04:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -383,31 +383,34 @@ LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
 LaTeX Warning: Reference `fig:tr' on page 1 undefined on input line 90.
 
 LaTeX Font Info:    Font shape `JT1/mc/m/sl' in size <10> not available
-(Font)              Font shape `JT1/mc/m/n' tried instead on input line 120.
+(Font)              Font shape `JT1/mc/m/n' tried instead on input line 124.
 LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
-(Font)              scaled to size 9.60999pt on input line 120.
+(Font)              scaled to size 9.60999pt on input line 124.
 LaTeX Font Info:    Font shape `JY1/mc/m/sl' in size <10> not available
-(Font)              Font shape `JY1/mc/m/n' tried instead on input line 120.
+(Font)              Font shape `JY1/mc/m/n' tried instead on input line 124.
 LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 9.60999pt on input line 120.
-[1] [2] [3]
+(Font)              scaled to size 9.60999pt on input line 124.
+[1] [2] [3] [4] [5] [6]
 ***** List of packages loaded by `plautopatch': *****
  plarray.
 *****************************************************
 
 AED: lastpage setting LastPage
-[4] (./etrc.aux)
+[7] (./etrc.aux)
 
 LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
  5765 strings out of 478692
  91281 string characters out of 5855915
- 593307 words of memory out of 5000000
+ 595307 words of memory out of 5000000
  24155 multiletter control sequences out of 15000+600000
  484305 words of font info for 97 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
- 70i,13n,76p,307b,379s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 70i,13n,76p,307b,445s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on etrc.dvi (5 pages, 15372 bytes).
+Output written on etrc.dvi (8 pages, 24536 bytes).
