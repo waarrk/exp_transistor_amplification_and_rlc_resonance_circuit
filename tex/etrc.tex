@@ -20,6 +20,8 @@
 \renewcommand\headrulewidth{0.4pt}
 }
 
+\numberwithin{equation}{section}
+
 %ここからソースコードの表示に関する設定
 \lstset{
   language={C++},
@@ -51,7 +53,7 @@
 % 氏名
 \author{鷲尾 優作}
 % 班（後期は班に分かれて実験をする．そのときは，ここに班番号を記入する．）
-\team{A班}
+\team{A1班}
 % 提出日
 \date{2022年6月16日}
 % 実験日
@@ -84,8 +86,8 @@
 \section{トランジスタの増幅回路とその特性}
 今回の実験では，エミッタ増幅回路をトランジスタの周辺回路として用いる．
 トランジスタに直流バイアス成分を加え活性領域に動作点を設定し,
-コンデンサC1を介して交流信号を重ねてトランジスタのベース端子に入力
-増幅された交流信号をコレクタ端子に接続されたコンデンサC2を介して取り出す仕組みである.
+コンデンサ$C_1$を介して交流信号を重ねてトランジスタのベース端子に入力
+増幅された交流信号をコレクタ端子に接続されたコンデンサ$C_2$を介して取り出す仕組みである.
 
 図\ref{fig:tr}にエミッタ増幅回路を示す.
 
@@ -105,22 +107,38 @@ $R_L = 10$ k$\Omega$, $C_1 = 0.1$ $\mu$F, $C_2 = 10$ $\mu$F, $E = 15$ V
 
 以下図　に実験で使用した回路をバイアス回路化したものを示す．
 
-ここで，$I_{R2} >> I_B$であると仮定すると，
+まず，$V_B$の電圧を導出する．
+$I_{R2} \gg  I_B$であると仮定すると，$V_B$の電圧は式(\ref{eq:V_B})のように決定できる．
 
 \begin{equation}
-  V_B = \frac{R_1}{R_1 + R_2} \cdot E 
+  V_B = \frac{R_1}{R_1 + R_2} \cdot E = \frac{22 \mathrm{[k\Omega]}}{22 \mathrm{[k\Omega]} + 100 \mathrm{[k\Omega]}} \cdot 15 \mathrm{[V]} \approx  2.7 \mathrm{[V]}
+  \label{eq:V_B}
 \end{equation}
 
-使用するバイポーラトランジスタ2SC1815Yのデータシートより，$I_B - V_{BE}$特性表を図　に示す．
-
-特性表より，$V_{BE}\thickapprox 0.6 \mathrm{[V]}$とおくと，
-
+次に$V_{E}$, $V_{C}$を導出する．
 動作点を決定するために必要な各電圧$V_{E}$, $V_{C}$を求める計算式は以下のとおりとなる．
 
 \begin{eqnarray}
   V_E &=& V_B - V_{BE} \\
   I_C &=& I_E = \frac{V_E}{R_3} \\
   V_C &=& E - R_4 I_C
+\end{eqnarray}
+
+$V_{BE}$を決定し，各電圧を導く．
+使用するバイポーラトランジスタ2SC1815のデータシートより，$I_B - V_{BE}$特性表を図\ref{fig:ibvbe.png}に示す．
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=9cm]{../2sc1815/ibvbe.png}
+  \caption{2SC1815トランジスタの$I_B$-$V_{BE}$特性}
+  \label{fig:ibvbe.png}
+\end{figure}
+
+特性表より，$V_{BE}\thickapprox 0.6 \mathrm{[V]}$と読み取ると，代入して各電圧は次のように求められる．
+\begin{eqnarray}
+  V_E &\approx& 2.7\mathrm{[V]} - 0.6\mathrm{[V]} = 2.1\mathrm{[V]}\\
+  \label{eq:I_C}
+  I_C &=& \frac{V_E}{R_3} = \frac{2.1\mathrm{[V]}}{2\mathrm{[k\Omega]}} = 1.05\mathrm{[mA]}\\
+  V_C &=& E - R_4 I_C = 15\mathrm{[V]} - 10\mathrm{[k\Omega]} \cdot 1.05\mathrm{[mA]} = 4.5\mathrm{[V]}
 \end{eqnarray}
 
 \subsubsection{電圧利得}
@@ -131,22 +149,38 @@ $R_L = 10$ k$\Omega$, $C_1 = 0.1$ $\mu$F, $C_2 = 10$ $\mu$F, $E = 15$ V
 
 ここで，
 \begin{eqnarray}
-  R_{12} = \frac{R_1 R_2}{R_1 + R_2} \\
-  R_{4L} = \frac{R_4 R_L}{R_4 + R_L}
+  R_{12} &=& \frac{R_1 R_2}{R_1 + R_2} = \frac{22\mathrm{[k\Omega]} \cdot 100\mathrm{[k\Omega]}}{22\mathrm{[k\Omega]} + 100\mathrm{[k\Omega]}} = 18.0\mathrm{[k\Omega]} \\
+  R_{4L} &=& \frac{R_4 R_L}{R_4 + R_L}= \frac{10\mathrm{[k\Omega]} \cdot 10\mathrm{[k\Omega]}}{10\mathrm{[k\Omega]} + 10\mathrm{[k\Omega]}} = 5.0\mathrm{[k\Omega]}
 \end{eqnarray}
 のように考えれば，簡易等価回路は図　のように簡単化できる．
 
-図　に2SC1815Yのhパラメータ-$I_C$特性表を示す．
-
-$I_C \thickapprox 1 \mathrm{[mA]}$であるから，
-特性表より，$h_fe \thickapprox 160$，$h_ie \thickapprox 4.0 \mathrm{[k \Omega]}$
-とみられる．
-
-これらの数値から，電圧利得の理論値は以下のように導出できる．
+電圧利得の理論値$G_V$は以下のような手順で導出できる．
 \begin{eqnarray}
   V_i &=& h_{ie} I_b + (1+h_{fe})R_3 I_b \\
   V_o &=& h_{fe} I_b R_{4L} \\
-  \left\lvert A_v \right\rvert &=& \frac{\left\lvert V_o \right\rvert}{\left\lvert V_i \right\rvert} 
+  \left\lvert A_v \right\rvert &=& \frac{\left\lvert V_o \right\rvert}{\left\lvert V_i \right\rvert}
+  = \frac{h_{fe} R_{4L}}{h_{ie} + (1+h_{fe})R_3} \\
+  G_v &=& 20log_{10}(\left\lvert A_v \right\rvert)
+\end{eqnarray}
+
+導出に必要な直流電流増幅率$h_{fe}$，トランジスタの入力インピーダンス$h_{ie}$は，データシートより求める．
+図\ref{fig:hic.png}に2SC1815のhパラメータ-$I_C$特性表を示す．
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=9cm]{../2sc1815/hic.png}
+  \caption{2SC1815トランジスタのhパラメータ-$I_C$特性}
+  \label{fig:hic.png}
+\end{figure}
+
+式(\ref{eq:I_C})より，$I_C \thickapprox 1.0 \mathrm{[mA]}$であるから，
+特性表より，$h_{fe} \thickapprox 160$，$h_ie \thickapprox 4.0 \mathrm{[k \Omega]}$と読み取れる．
+
+これらの数値を用いて前式を解くと，電圧利得の理論値は以下のように導出できる．
+\begin{eqnarray}
+  V_i &=& h_{ie} I_b + (1+h_{fe})R_3 I_b \\
+  V_o &=& h_{fe} I_b R_{4L} \\
+  \left\lvert A_v \right\rvert &=& \frac{\left\lvert V_o \right\rvert}{\left\lvert V_i \right\rvert}
   = \frac{h_{fe} R_{4L}}{h_{ie} + (1+h_{fe})R_3} \\
   G_v &=& 20log_{10}(\left\lvert A_v \right\rvert)
 \end{eqnarray}
@@ -284,7 +318,7 @@ Q値（Quality Factor）は，共振回路の共振のピークの鋭さを表�
 
 R-L-C共振回路においては一般的に
 \begin{eqnarray}
-  Q = \frac{\omega 0 L}{R} = \frac{1}{\omega_0 CR}
+  Q = \frac{\omega_0 L}{R} = \frac{1}{\omega_0 CR}
 \end{eqnarray}
 
 となることが知られている．
