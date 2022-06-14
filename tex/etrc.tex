@@ -178,11 +178,11 @@ $V_{BE}$を決定し，各電圧を導く．
 
 これらの数値を用いて前式を解くと，電圧利得の理論値は以下のように導出できる．
 \begin{eqnarray}
-  V_i &=& h_{ie} I_b + (1+h_{fe})R_3 I_b \\
-  V_o &=& h_{fe} I_b R_{4L} \\
+  V_i &=& 4.0 \mathrm{[k \Omega]} \cdot I_b + (1 + 160) \cdot 10 \mathrm{[k \Omega]} \cdot I_b \thickapprox 2.2\mathrm{[V]}\\
+  V_o &=& 4.0 \mathrm{[k \Omega]} \cdot I_b \cdot 5.0\mathrm{[k\Omega]} \thickapprox 5.5\mathrm{[V]}\\
   \left\lvert A_v \right\rvert &=& \frac{\left\lvert V_o \right\rvert}{\left\lvert V_i \right\rvert}
-  = \frac{h_{fe} R_{4L}}{h_{ie} + (1+h_{fe})R_3} \\
-  G_v &=& 20log_{10}(\left\lvert A_v \right\rvert)
+  = \frac{160 \cdot 5.0\mathrm{[k\Omega]}}{4.0 \mathrm{[k \Omega]} + ( 1 + 160 ) \cdot 10 \mathrm{[k \Omega]}} \thickapprox 2.45\mathrm{[V]}  \\
+  G_v &=& 20log_{10}(\left\lvert A_v \right\rvert) \thickapprox 7.8\mathrm{[dB]}
 \end{eqnarray}
 
 \subsubsection{低域カットオフ周波数}
@@ -194,31 +194,31 @@ $V_{BE}$を決定し，各電圧を導く．
 
 ここで，
 \begin{equation}
-  R_{io} = \frac{R_{12} \{h_ie + ( 1 + h_fe)R_3\}}{R_{12} + \{h_ie + ( 1 + h_fe)R_3\}}
+  R_{io} = \frac{R_{12} \{h_ie + ( 1 + h_fe)R_3\}}{R_{12} + \{h_ie + ( 1 + h_fe)R_3\}} = \frac{18.0\mathrm{[k\Omega]} \{4.0 \mathrm{[k \Omega]} + ( 1 + 160) 10 \mathrm{[k \Omega]}\}}{18.0\mathrm{[k\Omega]} + \{4.0 \mathrm{[k \Omega]} + ( 1 + 160)10 \mathrm{[k \Omega]}\}} \thickapprox 17 \mathrm{[k \Omega]}
 \end{equation}
 
 のように考えれば，簡易等価回路は図　のように簡単化できる．
 
 また，入力電圧を複素数空間に拡張すると，
 \begin{equation}
-  \dot{V} = \dot{V}_{ic} + \dot{V}_{io} = -j \frac{1}{\omega C_1} \dot{I}_i + R_{ic} \dot{I}_i
+  \dot{V} = \dot{V}_{ic} + \dot{V}_{io} = -j \frac{1}{\omega C_1} \dot{I}_i + R_{io} \dot{I}_i
 \end{equation}
 
 低域カットオフ周波数の定義より，周波数低域において増幅率が3[dB]低下する点が$f_L$であるから，
 このとき$\dot{V}_{io}$が$\dot{V}_{i}$の$\frac{1}{\sqrt{2}}$倍になることを利用すれば，
 $\left\lvert \dot{V}_{ic} \right\rvert = \left\lvert \dot{V}_{io} \right\rvert$が成り立つ．
 
-したがって，
+したがって，低域カットオフ周波数$f_L$は，
 \begin{eqnarray}
   \frac{1}{\omega_L C_1} &=& \frac{1}{2 \pi f_L C_1} = R_{io} \\
-  f_L &=& \frac{1}{2 \pi C_1 R_{io}}
+  f_L &=& \frac{1}{2 \pi C_1 R_{io}} =  \frac{1}{2 \cdot 3.14 \cdot 0.1\mathrm{[\mu F]} \cdot 17 \mathrm{[k \Omega]}} \thickapprox 93.7\mathrm{[Hz]}
 \end{eqnarray}
 
 \subsubsection{入力インピーダンス}
 回路全体の入力インピーダンスを算出する．
 図　に結合コンデンサ$C_1$，$C_2$のインピーダンスを無視した簡易等価回路を示す．
 
-入力側から見ると，入力インピーダンスは
+入力側から見たときの見かけの抵抗が入力インピーダンス$\dot{Z}_i$となるから，
 \begin{equation}
   \dot{Z}_i = R_{io}
 \end{equation}
@@ -227,7 +227,7 @@ $\left\lvert \dot{V}_{ic} \right\rvert = \left\lvert \dot{V}_{io} \right\rvert$�
 回路全体の出力インピーダンスを算出する．
 入力インピーダンスの算出に使用した図　より
 
-出力側から見ると，出力インピーダンスは
+出力側から見たときの見かけの抵抗が出力インピーダンス$\dot{Z}_o$となるから，
 \begin{equation}
   \dot{Z}_o = R_4
 \end{equation}
