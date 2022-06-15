@@ -12,10 +12,12 @@
 \usepackage{fancyvrb}
 \usepackage{fancyhdr}
 \usepackage{lastpage}
+\usepackage{otf}
 
 \fancypagestyle{foot}
 {
 \fancyhead[L]{}
+\fancyhead[R]{}
 \fancyhead[C]{トランジスタの増幅回路とR-L-C共振回路}
 \fancyfoot[C]{\thepage / \pageref{LastPage}}
 \renewcommand\headrulewidth{0.4pt}
@@ -61,7 +63,11 @@
 \expdate{2022年5月26日，6月2日，6月9日}
 % 共同実験者
 % グループに分かれて実験をするテーマでは，グループメンバーの番号名前を書く．
-\coauthor{}
+\coauthor{
+  14番 & 小林 拓真\\
+  24番 & 関 琉斗\\
+  26番 & \UTF{9AD9}橋 尚也
+}
 %
 %記載例：
 %\coauthor{%
@@ -87,7 +93,7 @@
 \section{トランジスタの増幅回路とその特性}
 今回の実験では，エミッタ増幅回路をトランジスタの周辺回路として用いる．
 トランジスタに直流バイアス成分を加え活性領域に動作点を設定し,
-コンデンサ$C_1$を介して交流信号を重ねてトランジスタのベース端子に入力
+コンデンサ$C_1$を介して交流信号を重ねてトランジスタのベース端子に入力，
 増幅された交流信号をコレクタ端子に接続されたコンデンサ$C_2$を介して取り出す仕組みである.
 
 図\ref{fig:fig1.jpg}にエミッタ増幅回路を示す.
@@ -98,11 +104,9 @@
   \label{fig:fig1.jpg}
 \end{figure}
 
-回路図上の各定数は以下のように設定した．
-
-$R_1 = 22$ k$\Omega$, $R_2 = 100$ k$\Omega$, $R_3 = 2$ k$\Omega$, $R_4 = 10$ k$\Omega$,
-$R_L = 10$ k$\Omega$, $C_1 = 0.1$ $\mu$F, $C_2 = 10$ $\mu$F, $E = 15$ V$R_1 = 22$ k$\Omega$, $R_2 = 100$ k$\Omega$, $R_3 = 2$ k$\Omega$, $R_4 = 10$ k$\Omega$,
-$R_L = 10$ k$\Omega$, $C_1 = 0.1$ $\mu$F, $C_2 = 10$ $\mu$F, $E = 15$ V
+回路図上の各定数は以下のように設定した．\\
+$R_1 = 22$ [k$\Omega$], $R_2 = 100$ [k$\Omega$], $R_3 = 2$ [k$\Omega$], $R_4 = 10$ [k$\Omega$], $R_L = 10$ [k$\Omega$]\\
+$C_1 = 0.1$ [$\mu$F], $C_2 = 10$ [$\mu$F], $E = 15$ [V]
 
 \subsection{増幅回路の理論特性}
 エミッタ増幅回路がどのような特性を示すか推定するため，電気的等価回路を作成し，
@@ -142,7 +146,7 @@ $R_L = 10$ k$\Omega$, $C_1 = 0.1$ $\mu$F, $C_2 = 10$ $\mu$F, $E = 15$ V
   \label{fig:fig2-bias.jpg}
 \end{figure}
 
-まず，$V_B$の電圧を導出する．
+まず，ベースGND間電圧$V_B$を導出する．
 $I_{R2} \gg  I_B$であると仮定すると，$V_B$の電圧は式(\ref{eq:V_B})のように決定できる．
 
 \begin{equation}
@@ -150,7 +154,7 @@ $I_{R2} \gg  I_B$であると仮定すると，$V_B$の電圧は式(\ref{eq:V_B}
   \label{eq:V_B}
 \end{equation}
 
-次に$V_{E}$, $V_{C}$を導出する．
+次にエミッタ-GND間電圧$V_{E}$, コレクタ-GND間電圧$V_{C}$を導出する．
 動作点を決定するために必要な各電圧$V_{E}$, $V_{C}$を求める計算式は以下のとおりとなる．
 
 \begin{eqnarray}
@@ -159,7 +163,7 @@ $I_{R2} \gg  I_B$であると仮定すると，$V_B$の電圧は式(\ref{eq:V_B}
   V_C &=& E - R_4 I_C
 \end{eqnarray}
 
-$V_{BE}$を決定し，各電圧を導く．
+ベース-エミッタ間電圧$V_{BE}$を決定し，各電圧を導く．
 使用するバイポーラトランジスタ2SC1815のデータシートより，$I_B - V_{BE}$特性表を図\ref{fig:ibvbe.png}に示す．
 \begin{figure}[H]
   \centering
@@ -177,8 +181,8 @@ $V_{BE}$を決定し，各電圧を導く．
 \end{eqnarray}
 
 \subsubsection{電圧利得}
-電圧利得は，入力信号に対して出力信号の比が何dB上昇したかを表す．増幅回路そのものの性能を示すうえで重要な
-パラメータである．電圧利得を算出するためには，まず結合コンデンサのインピーダンスを0とした交流分の等価回路を考える．
+電圧利得は，入力信号に対して出力信号の比から求められ，入力電圧に対して出力電圧が何[dB]上昇したかを表す．増幅回路そのものの性能を示すうえで重要な
+パラメータである．電圧利得を算出するためには，まず結合コンデンサのインピーダンスを0とし，交流分の等価回路を考える．
 
 以下図\ref{fig:fig3-touka.jpg}に実験で使用した回路の結合コンデンサのインピーダンスを0とした交流分の等価回路を示す．
 
@@ -189,14 +193,13 @@ $V_{BE}$を決定し，各電圧を導く．
   \label{fig:fig3-touka.jpg}
 \end{figure}
 
-ここで，
+ここで，入力側の並列抵抗を$R_{12}$，出力側の並列抵抗をを$R_{4L}$のように合成すれば
 \begin{eqnarray}
   R_{12} &=& \frac{R_1 R_2}{R_1 + R_2} = \frac{22\mathrm{[k\Omega]} \cdot 100\mathrm{[k\Omega]}}{22\mathrm{[k\Omega]} + 100\mathrm{[k\Omega]}} = 18.0\mathrm{[k\Omega]} \\
   R_{4L} &=& \frac{R_4 R_L}{R_4 + R_L}= \frac{10\mathrm{[k\Omega]} \cdot 10\mathrm{[k\Omega]}}{10\mathrm{[k\Omega]} + 10\mathrm{[k\Omega]}} = 5.0\mathrm{[k\Omega]}
 \end{eqnarray}
-のように考えれば，
 
-電圧利得の理論値$G_V$は以下のような手順で導出できる．
+電圧利得の理論値$G_V$は以下のような式で導出できることがわかる．
 \begin{eqnarray}
   V_i &=& h_{ie} I_b + (1+h_{fe})R_3 I_b \\
   V_o &=& h_{fe} I_b R_{4L} \\
@@ -210,26 +213,26 @@ $V_{BE}$を決定し，各電圧を導く．
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=9cm]{../2sc1815/hic.png}
+  \includegraphics[width=5cm]{../2sc1815/hic.png}
   \caption{2SC1815トランジスタのhパラメータ-$I_C$特性}
   \label{fig:hic.png}
 \end{figure}
 
 式(\ref{eq:I_C})より，$I_C \thickapprox 1.0 \mathrm{[mA]}$であるから，
-特性表より，$h_{fe} \thickapprox 160$，$h_ie \thickapprox 4.0 \mathrm{[k \Omega]}$と読み取れる．
+特性表(図\ref{fig:hic.png})より，$h_{fe} \thickapprox 160$，$h_ie \thickapprox 4.0 \mathrm{[k \Omega]}$と読み取れる．
 
-これらの数値を用いて前式を解くと，電圧利得の理論値は以下のように導出できる．
+これらの数値を用いて前式を解くと，電圧利得の理論値$G_V$は以下のように導出できる．
 \begin{eqnarray}
   V_i &=& 4.0 \mathrm{[k \Omega]} \cdot I_b + (1 + 160) \cdot 10 \mathrm{[k \Omega]} \cdot I_b \thickapprox 2.2\mathrm{[V]}\\
   V_o &=& 4.0 \mathrm{[k \Omega]} \cdot I_b \cdot 5.0\mathrm{[k\Omega]} \thickapprox 5.5\mathrm{[V]}\\
   \left\lvert A_v \right\rvert &=& \frac{\left\lvert V_o \right\rvert}{\left\lvert V_i \right\rvert}
   = \frac{160 \cdot 5.0\mathrm{[k\Omega]}}{4.0 \mathrm{[k \Omega]} + ( 1 + 160 ) \cdot 10 \mathrm{[k \Omega]}} \thickapprox 2.45\mathrm{[倍]}  \\
-  G_v &=& 20log_{10}(\left\lvert A_v \right\rvert) \thickapprox 7.8\mathrm{[dB]}
+  G_V &=& 20log_{10}(\left\lvert A_v \right\rvert) \thickapprox 7.8\mathrm{[dB]}
 \end{eqnarray}
 
 \subsubsection{低域カットオフ周波数}
 低域カットオフ周波数は，入力信号の周波数が減少した際に増幅が正常に行われなくなる現象において，その下限周波数の目安となる
-パラメータである．低域カットオフは結合コンデンサ$C_1$によって生じるため，算出するためには$C_2$
+パラメータである．低域カットオフは結合コンデンサ$C_1$によって生じるため，算出するためには結合コンデンサ$C_2$
 を無視した簡易等価回路を考える．
 
 以下図\ref{fig:fig4-c2.jpg}に$C_2$を無視した簡易等価回路を示す．
@@ -251,7 +254,7 @@ $V_{BE}$を決定し，各電圧を導く．
 \end{equation}
 のように考えれば，
 
-低域カットオフ周波数の定義より，周波数低域において増幅率が3[dB]低下する点が$f_L$であるから，
+低域カットオフ周波数の定義より，周波数低域において増幅率が最大利得から3[dB]低下する点が$f_L$であるから，
 このとき$\dot{V}_{io}$が$\dot{V}_{i}$の$\frac{1}{\sqrt{2}}$倍になることを利用すれば，
 $\left\lvert \dot{V}_{ic} \right\rvert = \left\lvert \dot{V}_{io} \right\rvert$が成り立つ．
 
@@ -286,6 +289,15 @@ $\left\lvert \dot{V}_{ic} \right\rvert = \left\lvert \dot{V}_{io} \right\rvert$�
 \end{equation}
 
 \subsubsection{出力波形の歪み}
+エミッタ増幅回路では入力信号の電圧$V_i$が一定の条件を満たすとき，正常に増幅されず$V_o$の波形にひずみが生じる．
+これには主に2つの原因がある．
+
+\paragraph{ベース電流の遮断}
+ベース-エミッタ間電圧$V_{BE}$にかかる直流バイアス成分が十分に大きくない場合，入力信号の電圧$V_i$が小さい場合トランジスタの動作点を下回り
+ベース電流$I_B$が遮断されることで，波形がカットされる．
+
+\paragraph{コレクタ電流の飽和}
+ベース-エミッタ間電圧$V_{BE}$が大きなとき，トランジスタの動作点が高くなり，コレクタ電流$I_C$が飽和することで出力電圧の波形がカットされる．
 
 \subsection{増幅回路の作成と実測}
 図\ref{fig:fig1.jpg}と同様の回路が実装された実験基板を用いて実際に入力を与えその応答を測定する．
@@ -309,13 +321,19 @@ $\left\lvert \dot{V}_{ic} \right\rvert = \left\lvert \dot{V}_{io} \right\rvert$�
 \end{table}
 
 
-図　に実験基板の写真を示す．
+図\ref{fig:kiban.jpg}に実験基板の写真を示す．
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=8cm]{../photo/kiban.jpg}
+  \caption{トランジスタのエミッタ増幅回路実験基板}
+  \label{fig:kiban.jpg}
+\end{figure}
 
-実験基板は負荷を可変できるようにするため負荷抵抗$R_L$が取り付けられていないため，$10 \mathrm{[k\Omega]}$の炭素被膜抵抗を$v_0$出力端子部に接続する．
+実験基板は負荷を可変できるようにするため負荷抵抗$R_L$が取り付けられていないため，$10 \mathrm{[k\Omega]}$の炭素被膜抵抗を$V_0$出力端子部に接続する．
 
 \paragraph{動作確認}
 実験基板が正しく動作していることを確認するため，入力電圧と出力電圧をオシロスコープで同時に観測し，反転増幅が発生するかを確認した．
-入力信号の周波数は$10 \mathrm{[kHz]}$，振幅は$0.4$[$V_{0P}$]とし，得られた波形を図　に示す．
+入力信号の周波数は$10 \mathrm{[kHz]}$，最大振幅は$0.4$[$V_{0P}$]とし，得られた波形を図　に示す．
 
 \subsubsection{バイアス電圧の測定}
 低周波発振器の出力周波数を0[Hz]に設定し，実験回路内を直流成分のみとし，バイアス電圧を測定する．
@@ -339,7 +357,7 @@ $\left\lvert \dot{V}_{ic} \right\rvert = \left\lvert \dot{V}_{io} \right\rvert$�
 \subsubsection{電圧利得の測定}
 電圧利得$G_V$は入力電圧$V_i$と出力電圧$V_o$から求められる．
 ここでは，デジタルマルチメータ（交流レンジ）によって各電圧の実効値を測定，オシロスコープを使用して最大振幅を測定し，
-正しい関係が成り立っていることを確認した上で，電圧利得$G_V$を求めた．
+両者が正しい関係が成り立っていることを確認した上で，電圧利得$G_V$を求めた．
 
 なお，低周波発振器の出力周波数は10[kHz]，電圧は0.4[$V_{RMS}$]とする．
 
@@ -359,9 +377,9 @@ $\left\lvert \dot{V}_{ic} \right\rvert = \left\lvert \dot{V}_{io} \right\rvert$�
 
 \subsubsection{増幅率の周波数特性}
 周波数低域において増幅率が最大利得から3[dB]減少する点（低域カットオフ周波数$f_L$）を確認するため，
-エミッタ増幅回路の入力電圧$V_i$の周波数を変化させ，増幅率の周波数応答を観測する．
+エミッタ増幅回路の入力電圧$V_i$の周波数$f$を変化させ，増幅率$G_V$の周波数応答を観測する．
 
-低周波発振器の電圧は0.4[$V_{RMS}$]に固定となるよう調整し，電圧は出力周波数は10[kHz]から100[kHz]まで適宜変化させた．
+低周波発振器の電圧は0.4[$V_{RMS}$]に固定となるよう調整し，出力周波数$f$は10[kHz]から100[kHz]まで適宜変化させた．
 このときの周波数に対するデジタルマルチメータ（直流レンジ）で測定した，入力電圧$V_i$，出力電圧$V_o$，またそれらから導出できる電圧利得$G_V$の各値を表\ref{tbl:res;f-gain}に示す．
 
 \begin{table}[H]
@@ -399,6 +417,8 @@ $\left\lvert \dot{V}_{ic} \right\rvert = \left\lvert \dot{V}_{io} \right\rvert$�
   \label{tbl:res;f-gain}
 \end{table}
 
+表\ref{tbl:res;f-gain}のデータを横軸$f$，縦軸$G_V$として片対数グラフでプロットした．図\ref{fig:f-gv.eps}に示す．
+
 \begin{figure}[H]
   \centering
   \includegraphics[width=10cm]{../gnuplot/f-gv.eps}
@@ -432,7 +452,7 @@ $\left\lvert \dot{V}_{ic} \right\rvert = \left\lvert \dot{V}_{io} \right\rvert$�
 
 
 \subsubsection{出力インピーダンスの測定}
-エミッタ増幅回路の出力端子の解放電圧$V_oo$に対して，出力端子に負荷抵抗$R_L$を接続した際の$R_L$の両端電圧$V_o$を介して接続することを考える．
+エミッタ増幅回路の出力端子の解放電圧$V_{oo}$に対して，出力端子に負荷抵抗$R_L$を接続した際の$R_L$の両端電圧$V_o$を介して接続することを考える．
 このとき出力インピーダンスは式(\ref{eq:Z_O})のように導出できることを利用し，回路の出力インピーダンスを実測した．
 
 \begin{equation}
@@ -492,8 +512,8 @@ R-L-C共振回路は共振によって入力した周波数に対して全体の
   Y &=& \frac{1}{\dot{Y}} = \frac{1}{\sqrt{R + j(\omega L - \frac{1}{\omega C})}}
 \end{eqnarray}
 
-また，アドミッタンスが最大となる角共振周波数$\omega_0$，複素アドミッタンスの大きさ$Y_0$とすると，
-複素アドミタンスの分母が最大となる時であるから，以下のように表せる．
+共振時にはアドミッタンスは最大となるから，このときの角共振周波数$\omega_0$，複素アドミッタンスの大きさ$Y_0$とすると，
+複素アドミッタンス$\dot{Y}$の分母が最大となる時が$Y_0$であるから，以下のように表せる．
 
 \begin{eqnarray}
   \omega_0 L - \frac{1}{\omega_0 C} &=& 0 \\
@@ -504,7 +524,7 @@ R-L-C共振回路は共振によって入力した周波数に対して全体の
 \subsubsection{アドミッタンスループ}
 
 複素パラメータ$R$（レジスタンス），$X$（リアクタンス），
-$G$（コンダクタンス），$B$（サセプタンス）は複素インピーダンスと次式のような関係を持つ．
+$G$（コンダクタンス），$B$（サセプタンス）は複素インピーダンス$\dot{Z}$と次式のような関係を持つ．
 
 \begin{eqnarray}
   \dot{Z} = R + jX \\
@@ -538,7 +558,8 @@ R-L-C共振回路においては一般的に
 
 となることが知られている．
 
-振動の共振ピークの$sqrt{2}$倍となる入力周波数$\omega_2$，$\omega_1$とすると，
+これを証明する．
+振動の共振ピークの$\sqrt{2}$倍となる入力周波数$\omega_2$，$\omega_1$とすると，
 $\omega_2$，$\omega_1$におけるYの大きさは
 
 \begin{eqnarray}
@@ -556,7 +577,7 @@ $R$（レジスタンス）について整理すると
 両辺に$\omega C$をかけて$\omega$を導くと
 
 \begin{eqnarray}
-  Lc \omega^2 + Rc\omega = 0\\
+  LC \omega^2 + RC\omega = 0\\
   \omega = \frac{\pm RC \pm \sqrt{(RC)^2 + 4LC}}{2LC}
 \end{eqnarray}
 
@@ -578,7 +599,7 @@ $\omega_2 > \omega_1 > 0$であるから，
 
 \subsubsection{R, L, C値の算出方法}
 R-L-Cの各定数が不明な際でも，アドミッタンスループを観測し$Y_0$，$\omega_0$，$\omega_1$，$\omega_2$を測定することで，
-各定数成分を決定することができる．
+各定数成分を決定することができる．$R$，$L$，$C$は，それぞれ以下の式のとおり解析できる．
 
 \begin{eqnarray}
   R &=& \frac{1}{Y_0} \\
@@ -607,7 +628,7 @@ R-L-C回路の特性評価を行うことができるLCRメーターを使用し
   \begin{center}
     \begin{tabular}{l|l|l|l}
       \hline
-      実験装置種別 & メーカー                 & 型番   & 管理番号         \\ \hline \hline
+      実験装置種別 & メーカー                 & 型番   & 製造番号         \\ \hline \hline
       LCRメータ    & エヌエフ回路設計ブロック & ZM2375 & BH16H24S00000033 \\ \hline
     \end{tabular}
   \end{center}
@@ -616,7 +637,7 @@ R-L-C回路の特性評価を行うことができるLCRメーターを使用し
 
 
 \paragraph{アドミタンス周波数特性}
-LCRメータの掃引周波数を2[kHz]から8[kHz]に設定し，周波数$f$に対する複素アドミッタンスの大きさ$Y$の変化を観測した．
+LCRメータの掃引周波数を2[kHz]から8[kHz]に設定し，1201[ポ0イント]の測定点において，周波数$f$に対する複素アドミッタンスの大きさ$Y$の変化を観測した．
 
 表\ref{tbl:lcrm-admitance}にLCRメーターの各設定値を示す．
 
@@ -658,7 +679,7 @@ LCRメータの掃引周波数を2[kHz]から8[kHz]に設定し，周波数$f$�
 \end{figure}
 
 \paragraph{アドミッタンスループ特性}
-LCRメータの掃引周波数を2[kHz]から8[kHz]に設定し，周波数$f$に対するコンダクタンス$G$，サセプタンス$B$の変化を観測した．
+LCRメータの掃引周波数を2[kHz]から8[kHz]に設定し，1201[ポ0イント]の測定点において，周波数$f$に対するコンダクタンス$G$，サセプタンス$B$の変化を観測した．
 
 表\ref{tbl:lcrm-admitance-loop}にLCRメーターの各設定値を示す．
 \begin{table}[H]
