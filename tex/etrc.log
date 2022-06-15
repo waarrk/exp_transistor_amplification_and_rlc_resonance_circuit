@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.141592653-p3.9.0-210218-2.6 (utf8.sjis) (TeX Live 2021/W32TeX) (preloaded format=platex 2022.2.8)  15 JUN 2022 11:50
+This is e-pTeX, Version 3.141592653-p3.9.0-210218-2.6 (utf8.sjis) (TeX Live 2021/W32TeX) (preloaded format=platex 2022.2.8)  15 JUN 2022 14:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -374,63 +374,70 @@ LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
  [1
 
 ]
-LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <10> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 93.
-LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
-(Font)              scaled to size 9.60999pt on input line 93.
-LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <10> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 93.
-LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 9.60999pt on input line 93.
-
-
-LaTeX Warning: Reference `fig:tr' on page 1 undefined on input line 93.
-
+File: ../fig/fig1.jpg Graphic file (type bmp)
+<../fig/fig1.jpg>
 LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
-(Font)              scaled to size 8.64899pt on input line 107.
+(Font)              scaled to size 8.64899pt on input line 97.
 LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 8.64899pt on input line 107.
+(Font)              scaled to size 8.64899pt on input line 97.
 LaTeX Font Info:    Font shape `JT1/mc/m/sl' in size <10> not available
-(Font)              Font shape `JT1/mc/m/n' tried instead on input line 128.
+(Font)              Font shape `JT1/mc/m/n' tried instead on input line 133.
 LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
-(Font)              scaled to size 9.60999pt on input line 128.
+(Font)              scaled to size 9.60999pt on input line 133.
 LaTeX Font Info:    Font shape `JY1/mc/m/sl' in size <10> not available
-(Font)              Font shape `JY1/mc/m/n' tried instead on input line 128.
+(Font)              Font shape `JY1/mc/m/n' tried instead on input line 133.
 LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 9.60999pt on input line 128.
-[1]
+(Font)              scaled to size 9.60999pt on input line 133.
+ [1]
+LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
+(Font)              scaled to size 9.60999pt on input line 133.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 9.60999pt on input line 133.
+File: ../fig/fig2-bias.jpg Graphic file (type bmp)
+<../fig/fig2-bias.jpg>
+ [2]
 File: ../2sc1815/ibvbe.png Graphic file (type bmp)
 <../2sc1815/ibvbe.png>
- [2]
+File: ../fig/fig3-touka.jpg Graphic file (type bmp)
+<../fig/fig3-touka.jpg>
+ [3]
 File: ../2sc1815/hic.png Graphic file (type bmp)
 <../2sc1815/hic.png>
- [3] [4] [5] [6] [7] [8] [9] [10] [11] [12]
+ [4]
+File: ../fig/fig4-c2.jpg Graphic file (type bmp)
+<../fig/fig4-c2.jpg>
+ [5]
+File: ../fig/fig5-im.jpg Graphic file (type bmp)
+<../fig/fig5-im.jpg>
+ [6] [7] [8]
+File: ../gnuplot/f-gv.eps Graphic file (type eps)
+<../gnuplot/f-gv.eps>
+ [9] [10]
+File: ../fig/fig6-rcl.jpg Graphic file (type bmp)
+<../fig/fig6-rcl.jpg>
+ [11] [12] [13]
+File: ../fig/fig7-meter.jpg Graphic file (type bmp)
+<../fig/fig7-meter.jpg>
+ [14]
 File: ../gnuplot/A_YTheta.eps Graphic file (type eps)
 <../gnuplot/A_YTheta.eps>
- [13]
+ [15] [16]
 File: ../gnuplot/A_GB.eps Graphic file (type eps)
 <../gnuplot/A_GB.eps>
- [14]
+ [17]
 ***** List of packages loaded by `plautopatch': *****
  plarray.
 *****************************************************
 
 AED: lastpage setting LastPage
-[15] (./etrc.aux)
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+[18] (./etrc.aux) ) 
 Here is how much of TeX's memory you used:
- 5818 strings out of 478741
- 91097 string characters out of 5862113
+ 5865 strings out of 478741
+ 92128 string characters out of 5862113
  593549 words of memory out of 5000000
- 24153 multiletter control sequences out of 15000+600000
- 486131 words of font info for 105 fonts, out of 8000000 for 9000
+ 24190 multiletter control sequences out of 15000+600000
+ 485823 words of font info for 104 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
- 70i,13n,76p,411b,379s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 70i,13n,76p,411b,383s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on etrc.dvi (16 pages, 50300 bytes).
+Output written on etrc.dvi (19 pages, 52388 bytes).
