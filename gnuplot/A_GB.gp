@@ -1,5 +1,5 @@
-#set terminal postscript eps monochrome
-#set output 'A_GB.eps'
+set terminal postscript eps monochrome
+set output 'A_GB.eps'
 set size nosquare 1,0.75
 set grid
 set xrange [-0.02:0.055]
