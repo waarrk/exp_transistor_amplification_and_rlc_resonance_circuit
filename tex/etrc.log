@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.141592653-p3.9.0-210218-2.6 (utf8.sjis) (TeX Live 2021/W32TeX) (preloaded format=platex 2022.2.8)  16 JUN 2022 00:38
+This is e-pTeX, Version 3.141592653-p3.9.0-210218-2.6 (utf8.sjis) (TeX Live 2021/W32TeX) (preloaded format=platex 2022.2.8)  16 JUN 2022 08:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -301,7 +301,11 @@ File: l3backend-dvipdfmx.def 2022-01-12 L3 backend support: dvipdfmx
 \g__pdf_backend_object_int=\count300
 \g__pdf_backend_annotation_int=\count301
 \g__pdf_backend_link_int=\count302
-) (./etrc.aux)
+) (./etrc.aux
+
+LaTeX Warning: Label `fig:A_YTheta.eps' multiply defined.
+
+)
 \openout1 = `etrc.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 78.
@@ -436,35 +440,49 @@ File: ../fig/fig5-im.jpg Graphic file (type bmp)
  [5] [6]
 File: ../photo/kiban.jpg Graphic file (type bmp)
 <../photo/kiban.jpg>
- [7] [8]
+File: ../oscilloscope/DS0000.BMP Graphic file (type bmp)
+<../oscilloscope/DS0000.BMP>
+ [7] [8] [9]
 File: ../gnuplot/f-gv.eps Graphic file (type eps)
 <../gnuplot/f-gv.eps>
- [9] [10]
+ [10] [11]
+File: ../oscilloscope/DS0001.BMP Graphic file (type bmp)
+<../oscilloscope/DS0001.BMP>
 File: ../fig/fig6-rcl.jpg Graphic file (type bmp)
 <../fig/fig6-rcl.jpg>
- [11] [12] [13]
+ [12] [13] [14] [15]
 File: ../fig/fig7-meter.jpg Graphic file (type bmp)
 <../fig/fig7-meter.jpg>
- [14]
+ [16]
 File: ../gnuplot/A_YTheta.eps Graphic file (type eps)
 <../gnuplot/A_YTheta.eps>
- [15] [16]
+ [17]
 File: ../gnuplot/A_GB.eps Graphic file (type eps)
 <../gnuplot/A_GB.eps>
- [17]
+ [18]
+File: ../gnuplot/A_YTheta_2.eps Graphic file (type eps)
+<../gnuplot/A_YTheta_2.eps>
+ [19]
+File: ../gnuplot/A_GB_2.eps Graphic file (type eps)
+<../gnuplot/A_GB_2.eps>
+ [20]
 ***** List of packages loaded by `plautopatch': *****
  plarray.
 *****************************************************
 
 AED: lastpage setting LastPage
-[18] (./etrc.aux) ) 
+[21] (./etrc.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
 Here is how much of TeX's memory you used:
- 7637 strings out of 478741
- 113910 string characters out of 5862113
- 615937 words of memory out of 5000000
- 25947 multiletter control sequences out of 15000+600000
+ 7666 strings out of 478741
+ 114595 string characters out of 5862113
+ 614937 words of memory out of 5000000
+ 25969 multiletter control sequences out of 15000+600000
  485362 words of font info for 108 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
  70i,13n,76p,411b,1019s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on etrc.dvi (19 pages, 53644 bytes).
+Output written on etrc.dvi (22 pages, 60040 bytes).

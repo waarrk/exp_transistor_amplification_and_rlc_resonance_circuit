@@ -333,7 +333,14 @@ $\left\lvert \dot{V}_{ic} \right\rvert = \left\lvert \dot{V}_{io} \right\rvert$�
 
 \paragraph{動作確認}
 実験基板が正しく動作していることを確認するため，入力電圧と出力電圧をオシロスコープで同時に観測し，反転増幅が発生するかを確認した．
-入力信号の周波数は$10 \mathrm{[kHz]}$，最大振幅は$0.4$[$V_{0P}$]とし，得られた波形を図　に示す．
+入力信号の周波数は$10 \mathrm{[kHz]}$，最大振幅は$0.4$[$V_{0P}$]とし，得られた波形を図\ref{fig:DS0000.BMP}に示す．
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=8cm]{../oscilloscope/DS0000.BMP}
+  \caption{反転増幅の確認}
+  \label{fig:DS0000.BMP}
+\end{figure}
+入力の交流波形に対して，反転増幅が行われていることがわかる．
 
 \subsubsection{バイアス電圧の測定}
 低周波発振器の出力周波数を0[Hz]に設定し，実験回路内を直流成分のみとし，バイアス電圧を測定する．
@@ -475,6 +482,17 @@ $\left\lvert \dot{V}_{ic} \right\rvert = \left\lvert \dot{V}_{io} \right\rvert$�
 \end{table}
 
 \subsubsection{増幅率の測定と波形歪みの観測}
+低周波発振器の出力周波数を10[kHz]に固定し，入力電圧$V_i$を0.1[$V_{RMS}$]から徐々に上昇させ，波形がゆがみ始める点を観測した．
+以下図\ref{fig:DS0001.BMP}に歪みはじめの波形を示す．
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=8cm]{../oscilloscope/DS0001.BMP}
+  \caption{反転増幅の確認}
+  \label{fig:DS0001.BMP}
+\end{figure}
+
+図より，出力波形に歪みが生じているのは0.64[$V_{RMS}$]以上であるとわかる．
 
 \section{R-L-C共振回路とその特性}
 R-L-C共振回路は，抵抗（Resistance），インダクタ（Inductance），キャパシタ（Capacitance）のそれぞれのインピーダンス特性を
@@ -489,12 +507,11 @@ R-L-C共振回路は，抵抗（Resistance），インダクタ（Inductance）�
 \end{figure}
 
 R-L-C共振回路は共振によって入力した周波数に対して全体のアドミッタンスが変化するアドミッタンス周波数特性を持つ．
-アドミッタンスが最大となる入力周波数を$f_0$，最大値から$\frac{1}{\sqrt{2}}$倍となる周波数を$f_1$，$f_2$とすると．
-アドミッタンス周波数特性は図　のようになる．
+ここでは，アドミッタンス$Y$が最大となる入力周波数を$f_0$，最大値から$\frac{1}{\sqrt{2}}$倍となる周波数を$f_1$，$f_2$とし，
+そのときの各周波数をそれぞれ$\omega_0$，$\omega_1$，$\omega_2$として扱う．
 
 また，R-L-C共振回路ではアドミタンスの実部と虚部であるコンダクタンスとサセプタンスをXY成分としてプロットすると
 円を描くことが知られている．この円を「アドミッタンスループ」と呼び，アドミッタンスループの各特徴点から有用な周波数や回路解析を行うことができる．
-図　にアドミタンスループを示す．
 
 \subsection{定数と理論特性}
 \subsubsection{アドミッタンスと共振周波数}
@@ -637,7 +654,7 @@ R-L-C回路の特性評価を行うことができるLCRメーターを使用し
 
 
 \paragraph{アドミタンス周波数特性}
-LCRメータの掃引周波数を2[kHz]から8[kHz]に設定し，1201[ポ0イント]の測定点において，周波数$f$に対する複素アドミッタンスの大きさ$Y$の変化を観測した．
+LCRメータの掃引周波数を2[kHz]から8[kHz]に設定し，1201[ポイント]の測定点において，周波数$f$に対する複素アドミッタンスの大きさ$Y$の変化を観測した．
 
 表\ref{tbl:lcrm-admitance}にLCRメーターの各設定値を示す．
 
@@ -655,11 +672,6 @@ LCRメータの掃引周波数を2[kHz]から8[kHz]に設定し，1201[ポ0イ�
       測定           & 信号レベル                    & 測定電流レベル & \multicolumn{1}{r}{1.00E-03} \\ \hline
       測定           & レンジ                        & 自動選択       & ON                           \\ \hline
       測定           & レンジ                        & 測定レンジ     & 1kΩ                          \\ \hline
-      測定           & トリガ                        & トリガ源       & Internal                     \\ \hline
-      測定           & トリガ                        & 遅延時間       & \multicolumn{1}{r}{0.008}    \\ \hline
-      測定           & 測定速度                      & 測定速度       & MED                          \\ \hline
-      測定           & DCバイアス                    & 有効無効       & OFF                          \\ \hline
-      測定           & 平均化                        & 有効無効       & OFF                          \\ \hline
       [スイープ測定] &                               &                &                              \\ \hline
       タイプ         & リニア                        &                &                              \\ \hline
       開始周波数     & \multicolumn{1}{r|}{2.00E+03} &                &                              \\ \hline
@@ -678,8 +690,23 @@ LCRメータの掃引周波数を2[kHz]から8[kHz]に設定し，1201[ポ0イ�
   \label{fig:A_YTheta.eps}
 \end{figure}
 
+実験データより，共振時の複素アドミッタンスの大きさ$Y_0$は$0.03198 \mathrm{[S]}$，共振周波数$f_0$は$4480 \mathrm{[Hz]}$である．
+$f_1$，$f_2$は，$f_0$からアドミッタンスが$\sqrt{2}$分の1倍になる点であるから
+
+\begin{eqnarray}
+  f_1 \thickapprox 4225 \mathrm{[Hz]}\\
+  f_2 \thickapprox 4750 \mathrm{[Hz]}
+\end{eqnarray}
+
+したがって各共振周波数$\omega_0$，また$\omega_1$，$\omega_2$は$\omega = 2 \cdot \pi f$なので
+\begin{eqnarray}
+  \omega_0 &=& 2 \pi 4480 \mathrm{[Hz]} \thickapprox 28134 \mathrm{[rad/s]}\\
+  \omega_1 &=& 2 \pi 4225 \mathrm{[Hz]} \thickapprox 26533 \mathrm{[rad/s]}\\
+  \omega_2 &=& 2 \pi 4750 \mathrm{[Hz]} \thickapprox 29830 \mathrm{[rad/s]}
+\end{eqnarray}
+
 \paragraph{アドミッタンスループ特性}
-LCRメータの掃引周波数を2[kHz]から8[kHz]に設定し，1201[ポ0イント]の測定点において，周波数$f$に対するコンダクタンス$G$，サセプタンス$B$の変化を観測した．
+LCRメータの掃引周波数を2[kHz]から8[kHz]に設定し，1201[ポイント]の測定点において，周波数$f$に対するコンダクタンス$G$，サセプタンス$B$の変化を観測した．\
 
 表\ref{tbl:lcrm-admitance-loop}にLCRメーターの各設定値を示す．
 \begin{table}[H]
@@ -698,11 +725,6 @@ LCRメータの掃引周波数を2[kHz]から8[kHz]に設定し，1201[ポ0イ�
       測定           & 信号レベル                    & 測定電流レベル & \multicolumn{1}{r}{1.00E-03} \\ \hline
       測定           & レンジ                        & 自動選択       & ON                           \\ \hline
       測定           & レンジ                        & 測定レンジ     & 1kΩ                          \\ \hline
-      測定           & トリガ                        & トリガ源       & Internal                     \\ \hline
-      測定           & トリガ                        & 遅延時間       & \multicolumn{1}{r}{0.008}    \\ \hline
-      測定           & 測定速度                      & 測定速度       & MED                          \\ \hline
-      測定           & DCバイアス                    & 有効無効       & OFF                          \\ \hline
-      測定           & 平均化                        & 有効無効       & OFF                          \\ \hline
       [スイープ測定] &                               &                &                              \\ \hline
       タイプ         & リニア                        &                &                              \\ \hline
       開始周波数     & \multicolumn{1}{r|}{2.00E+03} &                &                              \\ \hline
@@ -721,21 +743,86 @@ LCRメータの掃引周波数を2[kHz]から8[kHz]に設定し，1201[ポ0イ�
   \label{fig:A_GB.eps}
 \end{figure}
 
+アドミッタンスループ測定の実験結果からも$f_1$，$f_2$は，$f_0$，$\omega_0$，$\omega_1$，$\omega_2$を求めることができる．
+この導出結果はアドミッタンス周波数特性の測定値と完全に一致する結果となった．
+
 \subsubsection{定数の算出}
+アドミッタンス解析を行い，R-L-C回路の各定数を導く．
+まず品質係数Qについて，
+
+\begin{eqnarray}
+  Q &=& \frac{\omega_0 L}{R} = \frac{\omega_0}{\omega2 - \omega_1} \thickapprox 8.53\\
+\end{eqnarray}
+
+\begin{eqnarray}
+  R &=& \frac{1}{Y_0} \thickapprox 31.5 \mathrm{[\Omega]}\\
+  L &=& \frac{Q}{\omega_0 Y_0} \thickapprox 0.00948 \mathrm{[H]}\\
+  C &=& \frac{Y_0}{\omega_0 Q} \thickapprox 13.3 \mathrm{[nF]}
+\end{eqnarray}
+とわかる．
 
 \subsubsection{グラフの追記}
+複素アドミッタンスの大きさ$Y$，またその実部虚部について，
+
+\begin{eqnarray}
+  Y &=& \frac{1}{\sqrt{R^2 + \left(2\pi f L - \frac{1}{2\pi f C}\right)^2}}\\
+  \left(G - \frac{1}{2R}\right)^2 + B^2 &=& \left(\frac{1}{2R}\right)^2\\
+\end{eqnarray}
+
+である．ここで，さきほどの回路定数を用いてプロットすると，グラフは次のようになる
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=8cm]{../gnuplot/A_YTheta_2.eps}
+  \caption{アドミッタンス周波数特性の理論値と実験結果}
+  \label{fig:A_YTheta_2.eps}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=8cm]{../gnuplot/A_GB_2.eps}
+  \caption{アドミッタンスループの理論値と実験結果}
+  \label{fig:A_GB_2.eps}
+\end{figure}
+
 
 \section{課題}
 
 \subsubsection{エミッタ接地，ベース接地，コレクタ接地の各増幅回路の特徴についてまとめよ．}
+各増幅回路には表\ref{tab:feature}のような優位性や不利な点がある．
+
+主にエミッタ接地増幅回路は他の増幅回路と比較して，増幅率が高いこと，
+入力インピーダンスや出力インピーダンスに違いが発生する．
+
+\begin{table}[h]
+  \caption{各増幅回路の特性}
+  \label{tab:feature}
+  \centering
+  \begin{tabular}{c|ccc} \hline
+                       & エミッタ接地 & コレクタ接地 & ベース接地 \\ \hline\hline
+    入力インピーダンス & 低           & 高           & 低         \\\hline
+    出力インピーダンス & 高           & 低           & 高         \\\hline
+    電圧利得           & 大           & 1            & 大         \\\hline
+    電流利得           & 大           & 大           & 約1        \\\hline
+    周波数特性         & 悪           & 良           & 良         \\ \hline
+  \end{tabular}
+\end{table}
+
 
 \subsubsection{共振回路の応用用途にはどのようなものがあるか調査し，それぞれについてまとめよ．}
+共振回路は一定周波数の電波や信号を選別できる特性を生かし，ラジオの検波や無線LANなど現代の無線通信を支える基礎技術となっている．
+スピーカーから音をならすといった物理現象と大きく関わるものに加え，回路内のノイズ除去（必要な周波数以外を遮断）する用途でも用いられる．
+近年では，車のスマートキーの無線通信やRFIDタグと呼ばれる小型の電池を内蔵しない無線タグにも共振現象が活用されている．
 
 \section{感想}
+LCRメータの便利さに感動する実験でした．過去3年間手作業で行ってきた実験が全自動で行われる様を見て悲しくもありました．
+アドミッタンスループの実際の観察は始めてでしたが，綺麗な円を書くこと，また都合よく考え出された複素数という数の中で円が書かれていく不思議さを感じました．
+レポートはできるだけ単体で実験が再現できるよう内容を網羅するよう配慮しました．ただしやはり時間がかかりすぎているので，図の効率的な作成が課題です．
 
 \begin{thebibliography}{99}
   \bibitem{umeda} 梅田 幹雄、実験テキスト「トランジスタの増幅回路とR-L-C共振回路」、（2022年）
   \bibitem{toshiba} 東芝トランジスタ、データシート「2SC1815」、（2017年11月1日）
+  \bibitem{tdk}TDK、「共振・共鳴現象とは？同調（共振）回路の仕組み」、（2020年）
 \end{thebibliography}
 
 \end{document}
